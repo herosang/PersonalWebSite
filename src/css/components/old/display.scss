@@ -1,0 +1,29 @@
+.displayCard{
+	width: 500px;
+	height: 600px;
+	margin: 20px;
+	margin-top: -5px;
+
+
+
+}
+
+.titleCard{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background: #FFA726;
+	color: white;
+	height: 50px;
+	line-height: 50px;
+	font-family: 'Ubuntu';
+	font-size: 20px;
+}
+
+
+
+.stackGraph{
+	z-index: 1000;
+	margin-left: 255px;
+	position: absolute
+}
