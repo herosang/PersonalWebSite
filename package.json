@@ -5,7 +5,7 @@
   "main": "scripts/start.js",
   "scripts": {
     "start": "node scripts/start",
-    "dist": "rm -rf dist;node scripts/build;node scripts/prerender;",
+    "dist": "node scripts/build ;node scripts/prerender;",
     "test": "eslint src/js/**/*.js; flow check;",
     "coverage": "flow coverage --color src/js/components/App.js;"
   },

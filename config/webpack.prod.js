@@ -4,8 +4,6 @@ const InlineStylePlugin = require('./inline-style');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const path = require('path');
-const bourbon = require('node-bourbon').includePaths;
-
 
 const root = process.cwd();
 
@@ -14,7 +12,6 @@ const weCantMake = function weCantMake (request) {
 };
 
 module.exports = {
-
   progress: true,
   profile: true,
   entry: path.join(root, 'src/js/main'),
@@ -26,7 +23,8 @@ module.exports = {
   resolve: {
     alias: {
       'js': path.join(root, 'src/js'),
-      'css': path.join(root, 'src/css')
+      'css': path.join(root, 'src/css'),
+      'images': path.join(root, 'src/images')
     }
   },
   externals: [function (context, request, callback) {
@@ -49,7 +47,12 @@ module.exports = {
       test: /critical\.scss$/,
       loader: ExtractTextPlugin.extract(['css', 'postcss', 'sass'])
     }, {
-      ttest: /app\.scss$/, loader: "style!css!sass?includePaths[]=" + bourbon 
+      test: /app\.scss$/,
+      loaders: ['style', 'css', 'postcss', 'sass']
+    }, {
+      test: /\.(jpg|png|svg)$/,
+      loader: 'url?limit=25000',
+      include: path.images
     }]
   },
   postcss: function () {
