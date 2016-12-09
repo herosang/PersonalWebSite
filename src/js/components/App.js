@@ -10,12 +10,11 @@ export default class App extends Component {
   props: any;
 
   render () {
+    
     return (
-    <MuiThemeProvider>
       <div className='root'>
         <Main />
       </div>
-    </MuiThemeProvider> 
     );
   }
 
