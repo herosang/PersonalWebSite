@@ -1,6 +1,8 @@
 import styles from './css/main.scss';
 import Title from './title.js'
+import Prompt from './prompt.js'
 import React from 'react';
+import Presentation from './presentation.js';
 
 export default class App extends React.Component {
   
@@ -21,21 +23,35 @@ export default class App extends React.Component {
   }
 
   handleScroll(event){
-    if(event.srcElement.body.scrollTop <= 1800){
+    console.log(event.srcElement.body.scrollBottom);
+
+    if(event.srcElement.body.scrollTop <= 900){
       this.setState({position: event.srcElement.body.scrollTop});
     }else{
-      this.setState({position: 1800});
+      this.setState({position: 900});
     }
   }
 
   render () {
 
-    console.log(this.state.position);
+
+    const main =  {
+      display: "flex",
+      flexWrap: "wrap",
+      background: "#FFFFFF",
+      width: "100%",
+      height: "2600px",
+      //height: ((this.props.position < 900) ? "300px": "200px"),
+
+
+    }
 
     return (
 
-      <div className = {styles.main} >
+      <div style = {main} >
         <Title position = {this.state.position} />
+        <Prompt position = {this.state.position} />
+        <Presentation position = {this.state.position} />
       </div>
     );
   }

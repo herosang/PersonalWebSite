@@ -1,0 +1,174 @@
+.triDWrapper {
+-webkit-perspective: 500px;
+perspective: 500px;
+position: fixed;
+left: 0%;
+top: 0%;
+height: 100%;
+width: 100%;
+}
+
+
+
+.imgWrapper {
+font-family: 'Roboto', sans-serif;
+width: 300px;
+height: 350px;
+background: #3498db;
+margin: 0;
+position: fixed;
+cursor: pointer;
+border-radius: 3px;
+overflow: hidden;
+top: 50%;
+left: 50%;
+margin-left: -150px;
+margin-top: -100px;
+-webkit-transform: rotateX(30deg) scale(.65);
+transform: rotateX(30deg) scale(.65);
+-webkit-transition: .3s all ease;
+transition: .3s all ease;
+box-shadow: 0 15px 20px 5px rgba(0,0,0,.2);
+}
+
+.imgWrapper:hover {
+-webkit-transform: rotateX(0deg) scale(1);
+transform: rotateX(0deg) scale(1);
+box-shadow: 0 10px 10px 5px rgba(0,0,0,.15);
+}
+
+.imgWrapper img {
+width: 100%;
+margin: 0;
+position: relative;
+display: block;
+-webkit-transition: .3s all ease;
+transition: .3s all ease;
+}
+
+.imgWrapper:hover img:first-child{
+-webkit-transform: scale(1.5);
+-ms-transform: scale(1.5);
+transform: scale(1.5);
+filter: brightness(30%);
+}
+
+.img-wrapper:hover figcaption {
+background: rgba(0,0,0,.75);
+}
+
+.imgWrapper:hover figcaption h2 {
+opacity: 1;
+padding-left: 20px;
+-webkit-transition: .3s all ease .3s;
+transition: .3s all ease .3s;
+display: flex;
+justify-content: center;
+}
+
+.imgWrapper:hover figcaption .bottomDetail {
+-webkit-transform: translateY(0);
+-ms-transform: translateY(0);
+transform: translateY(0);
+}
+
+.imgWrapper:hover figcaption .bottomDetail p {
+opacity: 1;
+top: 0;
+-webkit-transition: .3s all ease .5s;
+transition: .3s all ease .5s;
+}
+
+.imgWrapper:hover figcaption .bottomDetail .socialIcons div{
+-webkit-transform: scale(1);
+-ms-transform: scale(1);
+transform: scale(1);
+}
+
+figcaption {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+-webkit-transition: .3s all ease;
+transition: .3s all ease;
+}
+
+figcaption h2 {
+margin: 0;
+color: white;
+font-size: 22px;
+line-height: 55px;
+opacity: 0;
+padding-left: 0;
+padding-right: 20px;
+font-weight: 300;
+}
+
+figcaption .bottomDetail {
+position: absolute;
+width: 100%;
+bottom: 0;
+top: 55px;
+background: white;
+-webkit-transform: translateY(100%);
+-ms-transform: translateY(100%);
+transform: translateY(100%);
+-webkit-transition: .3s all ease .1s;
+transition: .3s all ease .1s;
+}	
+
+.bottomDetail p {
+font-size: 17px;
+opacity: 0;
+top: 20px;
+padding-left: 0px;
+padding-right: 0px;
+color: #414B4B;
+font-weight: 300;
+line-height: 1.5;
+display: flex;
+justify-content: center;
+
+}
+
+.bottomDetail .socialIcons {
+position: absolute;
+margin-bottom: 25px;
+bottom: 0;
+display: flex;
+justify-content: center;
+width: 100%;
+
+
+}
+
+.design{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	height: 22px;
+}
+
+
+@mixin logo($offset, $transition){
+	width: 20px;
+	height: 20px;
+	margin-left: $offset;
+	transition: .3s all ease $transition;
+}
+
+.github{
+	@include logo(0px, 1s);
+
+}
+
+.linkedin{
+	@include logo(40px, 1.1s);
+
+}
+
+.resume{
+	@include logo(40px, 1.2s);
+}
