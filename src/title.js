@@ -211,10 +211,11 @@ export default class Title extends Component {
       justifyContent: "center",
       alignItems: "center",
       flexWrap: "wrap",
-      left: "0px",
-      top: "0px",
+      left: "50%",
+      top: "50%",
       position: "fixed",
-      marginTop: ((this.props.position < 900) ? "200px": "100px"),
+      marginLeft: "-50%",
+      marginTop: ((this.props.position < 900) ? "-100px": "-200px"),
       transition: "all 2s",
     }
 
