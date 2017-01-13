@@ -32,9 +32,10 @@ export default class Prompt extends Component {
       flexWrap: "wrap",
       justifyContent: "center",
       position: "fixed",
-      left: "0px",
-      top: "0px",
-      marginTop: ((this.props.position < 900) ? "300px": "200px"),
+      left: "50%",
+      top: "50%",
+      marginLeft: "-50%",
+      marginTop: ((this.props.position < 900) ? "-30px": "-100px"),
       opacity: ((this.props.position < 900) ? 1 : 0),
       transition: "all 2s",
 

@@ -215,7 +215,7 @@ export default class Title extends Component {
       top: "50%",
       position: "fixed",
       marginLeft: "-50%",
-      marginTop: ((this.props.position < 900) ? "-100px": "-200px"),
+      marginTop: ((this.props.position < 900) ? "-120px": "-220px"),
       transition: "all 2s",
     }
 
